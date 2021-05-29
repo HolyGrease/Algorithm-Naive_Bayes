@@ -1,11 +1,32 @@
 from itertools import groupby
 
 def naive_bayes(dataset, row):
+	"""Method calculate probability affiliation of given instance to each class in dataset
+
+	Args:
+		dataset (Dataset): dataset which used to classify
+		row (list): instance to classify
+
+	Returns:
+		list ((float, class)):
+			float - probability of this class
+			class - prediction
+	"""
 	classes = list(set(dataset.get_target_column()))
 
 	return [(naive_bayes_helper(dataset, row, value), value) for value in classes]
 
 def naive_bayes_helper(dataset, row, cl):
+	"""Method calculate probability affiliation of given instance to given class
+
+	Args:
+		dataset (Dataset): dataset which used to classify
+		row (list): instance to classify
+		cl: class for which calculate probability
+
+	Returns:
+		float: probability of given class
+	"""
 	total = len(dataset.get_target_column())
 	total_class = dataset.get_target_column().count(cl)
 
