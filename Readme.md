@@ -24,6 +24,7 @@ Now we can create Dataset object. Arguments:
 - target index - index of target attribute, attribute that contains classes values
 - column or attributes names - list of attributes names
 - name - Dataset name
+-
 
 	iris = Dataset(data, 4, column_names, "Iris")
 
@@ -50,7 +51,9 @@ For classification just call naive_bayes function. This function gets 2 argument
 - row - instance to classify
 
 As return function gives list of values (for each class in train dataset):
+>
 > (probability, class)
+>
 To get the most probable class use function max() and get by index class value
 
 	predicted_classes = naive_bayes(train, row)
