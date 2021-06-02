@@ -52,7 +52,7 @@ For classification just call naive_bayes function. This function gets 2 argument
 
 As return function gives list of values (for each class in train dataset):
 >
-> (probability, class)
+> [(probability_1, class_1), (probability_2, class_2), ...]
 >
 To get the most probable class use function max() and get by index class value
 
